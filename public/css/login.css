@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.wapper{
+    border: 1px solid rgb(227, 227, 227);
+    border-radius: 20px;
+    box-shadow: 2px 2px 20px rgb(197, 197, 197);
+    width: 500px;
+    margin: 50px auto;
+    padding: 50px;
+}
+.form-group{
+    margin-bottom: 20px ;
+}
+.from-control {
+    border-radius: 20px;
+}
+button{
+    width: 100%;
+    margin-bottom: 10px ;
+}
+.ho-ten{
+    display: flex;
+}
+.ho{
+    margin-right: 10px;
+}

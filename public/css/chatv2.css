@@ -1,0 +1,323 @@
+*{
+            margin: 0;
+            padding: 0;
+            font-family: inherit;
+            /* color: rgb(58, 58, 58); */
+        }
+        a{
+            color: white;
+            
+        }
+        body{
+
+            background-color: rgb(234, 234, 234);
+        }
+        img{
+            height: 50px;
+        
+        }
+        .left{
+            padding-left: 55px ;
+            padding: 0;
+            padding-left: 40px;
+            color: white;
+            text-align: center;
+            /* margin: 20px 0; */
+        } 
+        .wraper1{
+            padding: 20px 0;
+        }
+        .wraper1{
+            margin: 20px 0;
+            height: 90vh;
+            box-shadow: 2px 2px 10px black;
+
+            border-top-left-radius: 20px; 
+            border-bottom-left-radius: 20px; 
+        }
+        .center{
+            background: rgb(238, 238, 238);
+            padding:  0;
+            /* padding-right: 0 ; */
+            color: white;
+
+        }
+       .wraper0{
+        margin: 20px 0;
+        height: 90vh;
+        box-shadow: 2px 2px 10px black;
+
+       }
+
+        .center header{
+            font-size: 30px;
+            font-weight: 550;
+            padding: 0px 20px;
+            padding-top: 10px;
+            border-top-right-radius: 20px;
+            border-top-left-radius: 20px;
+            border-bottom: 1px solid rgb(197, 197, 197);
+            box-shadow: 0px 5px 4px rgb(80, 80, 80);
+            /* background-color: rgb(203, 203, 203); */
+        }
+        .boder1{
+            background-color: #ffffff;
+            border-radius: 40px;
+            margin: 5px;
+            padding: 5px;
+            color: black;
+        }
+        
+        .center header img{
+            /* margin-bottom: 20px; */
+            height: 80px;
+            border: 1px solid rgb(87, 87, 87);
+        }
+        .center section{
+            padding: 10px;
+            overflow-y: scroll;
+            color: rgb(34, 34, 34);
+            height: 50vh;
+        }
+        .friend{
+            padding: 5px 10px;
+            display: flex;
+        
+        }
+        .friend:hover{
+            
+            border-bottom-left-radius: 15px;
+            border-top-left-radius: 15px;
+            background: rgb(211 211 211);
+            /* color : rgb(255, 255, 255); */
+            border-right: 8px solid rgb(58, 58, 58);
+        }
+        .hover{
+            border-bottom-left-radius: 15px;
+            border-top-left-radius: 15px;
+            background: rgb(211 211 211);
+            /* color : rgb(255, 255, 255); */
+            border-right: 8px solid rgb(58, 58, 58);
+        }
+        .friend img{
+            height: 60px;
+            margin-right: 5px;
+        }
+        .name{
+            margin-bottom: 5px;
+            font-style: 45px;
+            font-weight: 600;
+        }
+        
+        
+        .right{
+            background: none;
+            padding: 0px;
+            padding-right: 55px;
+        }
+        .right header{
+            
+            border-top-right-radius: 20px;
+            border-top-left-radius: 20px;
+            padding:10px 20px;
+            font-size: 25px;
+            font-weight: 500;
+            color: black;
+            box-shadow: 0px 5px 4px rgb(227, 227, 227);
+            /* background: white; */
+            border-bottom: 1px solid rgb(197, 197, 197);
+        }
+        .boder2{
+            /* background-color: #000000; */
+            border-radius: 43px;
+            /* margin: ; */
+            padding: 10px;
+            color: rgb(255, 255, 255);
+        }
+        .right header img{
+            height: 70px;
+            /* margin-bottom: 15px; */
+        }
+        .right section{
+            position: relative;
+            overflow-y: scroll;
+            height: 63vh;
+            margin-left: 15px;
+            /* background: linear-gradient(
+                to right bottom, rgba(238, 130, 238, 0.5), rgba(0, 0, 255, 0.8) 
+            ); */
+            background-color: #ffffff;
+            padding: 5px 10px;
+            
+        }
+        .avatar-fr{
+            color: #565656;
+        }
+        .avatar-fr img{
+            height: 30px;
+        }
+        .chat_user{
+            background-color: rgb(33, 37, 41);
+            color: white;
+            margin-left: auto;
+            margin-bottom: 5px;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            border-bottom-left-radius: 20px;
+            padding: 10px;
+            width: fit-content;
+            display: block;
+        }
+        .chat_user img{
+            background-color: #ffffff;
+            margin-left: auto;
+            height: 150px;
+        }
+        .chat_group{
+            background-color: rgb(31, 41, 181);
+            position: absolute;
+            color: rgb(255, 255, 255);
+            /* margin-left: auto; */
+            margin-bottom: 5px;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+            padding: 10px;
+            width: fit-content;
+            display: block;
+        }
+        .seen img{
+            height: 20px;
+            margin-left: auto ;
+            display: block;
+
+        }
+        .chat {
+            position: absolute;
+            position: relative;
+            display: block;
+        }
+        
+        .chat_group a{
+            padding-left: 13px;
+            
+        }
+        .chat_user a{
+            right: 95%;
+            padding: 0 10px;
+        }
+        .dele{
+            display: none;
+            position: absolute;
+        }
+        .chat:hover .dele {
+            display: inline;
+        }
+        .icon {
+            position: absolute;
+            background-color: rgba(255, 255, 255, 1);
+            color: rgb(123, 123, 123);
+            padding: 0px 5px;
+            border-radius: 15px;
+            opacity: 0;
+            display: none;
+        }
+        .chat:hover .icon{
+            opacity: 1;
+            display: block;
+            z-index: 100;
+        }
+        .chat svg path:hover{
+            color: rgb(243, 19, 19);
+            
+        }
+        .right footer{
+            padding: 5px 20px;
+        }
+        .wraper2{
+            position: relative;
+            margin: 20px 0;
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+            box-shadow: 2px 2px 10px black;
+            background: rgb(238, 238, 238);
+            height: 90vh;
+            color: black;
+        }
+        .chucnang{
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+
+            top: 0px;
+            position: absolute;
+            height: 100%;
+            width: 40%;
+            background: rgba(33, 37, 41, 1);;
+            right: 0px;
+            display: none;
+            opacity: 0;
+            transform: translateX(100%);
+            transition: 0.3s ease-in-out ;
+            box-shadow: 15px 2px 15px white;
+            color: rgb(173, 173, 173);
+            margin: 0 5px;
+
+
+        }
+        .chucnang_on{
+            /* padding-right: 20px; */
+            top: 5px;
+            right: 45px;
+            color: white;
+            position: absolute;
+
+        }
+        .chucnang_off{
+            color: rgb(173, 173, 173);
+            padding: 5px 20px;
+            border-bottom: #565656 solid 1px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .name_group{
+            color: rgb(173, 173, 173);
+            margin: 10px;
+        }
+        .open{
+            display: block;
+            transition: 0.3s ease-in-out ;
+            transform: translateX(0);
+            opacity: 1;
+        }
+        .members{
+            display: flex;
+            overflow-x: scroll;
+        }
+        .users{
+            padding: 5px 15px;
+            color: white
+        }
+        .users img{
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+        .add_member{
+            height: 35vh;
+            overflow-y: scroll;
+        }
+        .user{
+            padding: 5px 10px;
+            position: relative;
+        }
+        .user img{
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            margin-right: 5px;
+        }
+        .user svg{
+            position: absolute;
+            right: 20px;
+            top: 25px;
+        }
