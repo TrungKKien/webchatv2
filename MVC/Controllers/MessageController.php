@@ -12,22 +12,23 @@ class MessageController extends controller
         }
         if (isset($_POST['chat'])) {
             $chat = $_POST['chat'];
+            // echo $chat;
             $group_id = $_GET['grid'];
+            $user_id = $_SESSION['user']['id'];
             if (isset($_FILES['attachment'])) {
                 $file = $_FILES['attachment'];
                 $file_name = $file['name'];
                 move_uploaded_file($file['tmp_name'], 'public/image/' . $file_name);
             }
             $model = $this->model('Messages');
-            $model->chat($group_id, $_SESSION['user']['id'], $file_name, $chat);
-
+            $model->chat($group_id, $user_id, $file_name, $chat);
             header("location:http://localhost/chatv2/message?grid=$group_id");
         }
         // $friend = $this->getFriend();
         // $get
         // $if(isset($_GET['']))
         $listfrends = $this->listfriends($_SESSION['user']['id']);
-        $listgroups = $this->getgroups($_SESSION['user']['id']);
+        $groups = $this->getgroups($_SESSION['user']['id']);
 
         $listchat = '';
         $usergroups = '';
@@ -40,7 +41,7 @@ class MessageController extends controller
         $view = $this->view('Message', [
             'user' => $user,
             'friend' => $friend,
-            "listgroups" => $listgroups,
+            "groups" => $groups,
             "list" => $listfrends,
             "listchat" => $listchat,
             "usergroups" => $usergroups,

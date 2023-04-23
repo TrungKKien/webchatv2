@@ -9,15 +9,16 @@
             mysqli_set_charset($this->_conn, "utf8");
         }
 
-        public function value($value = [])
+        public function value( $value = [] )
         {
-            $set = [];
-            $value = [];
+            $arr1 = [];
+            $arr2 = [];
             foreach($value as $k => $v){
-                array_push($set, $k);
-                array_push($value, '"'.$v.'"');
+                array_push($arr1, $k);
+                array_push($arr2, '"'.$v.'"');
             }
-            return ' (' . implode(', ', $set) . ') VALUES (' . implode(', ', $value) .') ';
+            print_r($arr1);
+            return ' (' . implode(', ', $arr1) . ') VALUES (' . implode(', ', $arr2) .') ';
         }
 
         public function insert( $value = [])
@@ -26,7 +27,6 @@
             if (count($value) > 0){
                 $query .= $this->value($value);
             }
-            echo $query;
             return mysqli_query($this->_conn, "$query");            
         }
 
@@ -74,7 +74,7 @@
         }
 
         public function update($where = [], $set = [] )
-        {
+        { 
             $query = "UPDATE $this->_table";
             if (count($set) > 0){
                 $query .= $this->set($set);

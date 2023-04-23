@@ -8,7 +8,7 @@
 <section>
     <div class="list_friends">
         <?php $var = '';
-        foreach ($data["listgroups"] as $key) { ?>
+        foreach ($data["groups"] as $key) { ?>
             <?php if ($key['user_id'] != $_SESSION['user']['id']) { ?>
                 <?php if ($var != $key['user_id']) { ?>
                     <a href="http://localhost/chatv2/message?grid=<?= $key['group_id'] ?>">
@@ -23,12 +23,12 @@
                             <?php if ($key['name'] != '') { ?>
                                 <div class="">
                                     <h5 class="name"><?= $key['name'] ?></h5>
-                                    <p class="chat">hell0</p>
+                                    <p class="chat"><?= $key['MAX(content)']?></p>                          
                                 </div>
                             <?php } else { ?>
                                 <div class="">
                                     <h5 class="name"><?= $key['u_name'] ?></h5>
-                                    <p class="chat">hell0</p>
+                                    <p class="chat"><?= $key['MAX(content)']?></p>
                                 </div>
                             <?php } ?>
                         </div>

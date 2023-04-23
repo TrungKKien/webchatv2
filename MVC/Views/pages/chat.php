@@ -6,7 +6,7 @@
                 <?php if ($key['user_id'] != $_SESSION['user']['id'] &&  $key['group_id'] == $_GET['grid']) {
                     if ($var != $key['group_id']) {
                         if ($key['name'] != '') { ?>
-                            <img class="rounded-circle" src="public/image/<?= $key['u_avatar'] ?>" alt="">
+                            <img class="rounded-circle" src="public/image/avatar_user.jpg" alt="">
                         <?= $key['name'];
                         } else { ?>
                             <img class="rounded-circle" src="public/image/<?= $key['u_avatar'] ?>" alt="">
@@ -123,7 +123,6 @@
         <div class="chat">
             <div class="input-group mb-3 ">
                 <form style="display: flex; width: 100%" action="http://localhost/chatv2/message?grid=<?= $_GET['grid'] ?>" method="post" enctype="multipart/form-data">
-
                     <input type="text" name="chat" class="form-control">
                     <input style="width: 40px;" name="attachment" type="file" class="form-control bi bi-image" id="inputGroupFile03" aria-describedby="inputGroupFileAddon03" aria-label="Upload">
                     <button type="submit" class="bg-dark">
@@ -132,7 +131,6 @@
                                 <path d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z" />
                             </svg>
                         </span>
-
                     </button>
                 </form>
             </div>
@@ -186,7 +184,7 @@
             <?php $var = '';
             foreach ($data["listgroups"] as $key) { ?>
                 <?php if ($key['user_id'] != $_SESSION['user']['id'] && $key['name'] == '') { ?>
-                    <?php if ($var != $key['user_id']) { ?> 
+                    <?php if ($var != $key['user_id']) { ?>
                         <a href="http://localhost/chatv2/message/addusergroup?grid=<?= $_GET['grid'] ?>&user_id=<?= $key['user_id'] ?>">
                             <div class="user">
                                 <img src="public/image/<?= $key['u_avatar'] ?>" alt="">
