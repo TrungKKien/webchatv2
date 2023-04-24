@@ -1,4 +1,5 @@
-<div class="wraper2">
+<?php foreach($data['listchat'] as $key){?>
+<div id="chat_<?= $key[$group_id]?>" class="wraper2">
     <header>
         <div class="boder2  bg-dark ">
             <?php //$var = $_GET['grid'];
@@ -29,7 +30,7 @@
     </header>
     <section>
         <?php $var = '';
-        foreach ($data['listchat'] as $key) { ?>
+        // foreach ($data['listchat'] as $key) { ?>
 
             <?php if ($key['user_id'] != $_SESSION['user']['id']) {
                 if ($var != $key['user_id']) { ?>
@@ -116,7 +117,7 @@
             <!-- </div> -->
 
         <?php $var = $key['user_id'];
-        } ?>
+        // } ?>
     </section>
     <footer>
 
@@ -202,3 +203,4 @@
         </div>
     </div>
 </div>
+<?php } ?>

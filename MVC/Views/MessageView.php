@@ -52,12 +52,12 @@
             });
         });
 
-        $(document).ready(function(){
-            $('.friend').on('click', function () { 
-              $(this).siblings().removeClass('hover');
-              $(this).addClass('hover');  
-            })
-        })
+        // $(document).ready(function(){
+        //     $('.friend').on('click', function () { 
+        //       $(this).siblings().removeClass('hover');
+        //       $(this).addClass('hover');  
+        //     })
+        // })
     </script>
 
 </body>

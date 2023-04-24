@@ -1,37 +1,32 @@
 <?php
-
 class AjaxController extends controller
 {
     public function check()
     {
         if (isset($_POST['phone'])) {
             $phone = $_POST["phone"];
+            if($_POST["phone"] == ""){
+                echo "Chưa nhập số điện thoại";
+            }//$phone
             $model = $this->model("user");
             $user = $model->checkphone($phone);
             echo $user;
-        }
-        
-        
-    }
-    public function checkphone()
-    {
-        if (isset($_POST['phonee'])) {
-            echo "Chưa nhập số điện thoại";
-        }
+        } 
     }
     public function checkpass()
     {
-        if (isset($_POST['password'])) {
-            echo $password = $_POST['password'];
+        if (($_POST['password'] == "")) {
+                echo "chua nhap password";
         }
-       
     }
     public function checkname()
     {
-        if (isset($_POST['name'])) {
-            echo "Chưa nhập tên";
-            echo $password = $_POST['name'];
-
+        if (($_POST['name']) == "") {
+            $name = $_POST['name'];
+            echo $name;
+            if($name == ""){
+                echo "Chưa nhập tên";
+            }
         }
     }
     public function updatenamegroup()

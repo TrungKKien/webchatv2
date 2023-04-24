@@ -16,9 +16,9 @@ class RegisterController extends controller
                 if ($check['number_phone'] == $phone) {
                     header("location:http://localhost/chatv2/register");
                 } else {
-                    if (isset($_POST['name'])) {
+                    if (($_POST['name']) != "") {
                         $name = $_POST['name'];
-                        if (isset($_POST['password'])) {
+                        if (($_POST['password'] != "")) {
                             $password = $_POST['password'];
                             $password = password_hash($password, PASSWORD_DEFAULT);
                             $file_name = "avatar_user.jpg";
