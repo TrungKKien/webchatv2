@@ -6,6 +6,9 @@ class AjaxController extends controller
     {
         if (isset($_POST['phone'])) {
             $phone = $_POST["phone"];
+            if (($_POST['phone'] == "")) {
+            echo "Chưa nhập số điện thoại";
+        }
             $model = $this->model("user");
             $user = $model->checkphone($phone);
             echo $user;
@@ -13,24 +16,19 @@ class AjaxController extends controller
         
         
     }
-    public function checkphone()
-    {
-        if (isset($_POST['phonee'])) {
-            echo "Chưa nhập số điện thoại";
-        }
-    }
     public function checkpass()
     {
-        if (isset($_POST['password'])) {
-            echo $password = $_POST['password'];
+        if (($_POST['password']) == "") {
+            // echo $password = $_POST['password'];
+            echo "chua nhap pass word";
         }
        
     }
     public function checkname()
     {
-        if (isset($_POST['name'])) {
+        if (($_POST['name']) == "") {
             echo "Chưa nhập tên";
-            echo $password = $_POST['name'];
+            // echo $password = $_POST['name'];
 
         }
     }
