@@ -44,12 +44,19 @@ class GroupModel  extends DataBase
 // WHERE messages.group_id 
 // IN (SELECT group_id FROM user_groups WHERE user_id = 1) 
 // GROUP BY groups.name
-        $query = "SELECT MAX(content), users.name AS u_name, groups.name, groups.avatar, users.avatar AS u_avatar, messages.*
-        FROM `messages` 
-        JOIN users ON messages.user_id = users.id 
+        // $query = "SELECT MAX(content), users.name AS u_name, groups.name, groups.avatar, users.avatar AS u_avatar, messages.*
+        // FROM `messages` 
+        // JOIN users ON messages.user_id = users.id 
+        // JOIN groups ON messages.group_id = groups.id
+        // WHERE group_id IN (SELECT group_id FROM user_groups WHERE user_id = $user_id) 
+        // GROUP BY users.name";
+        $query = "SELECT MAX(content), groups.id, messages.user_id, groups.name, users.name AS u_name, users.avatar AS u_avatar, groups.avatar 
+        FROM  messages 
         JOIN groups ON messages.group_id = groups.id
-        WHERE group_id IN (SELECT group_id FROM user_groups WHERE user_id = $user_id) 
-        GROUP BY users.name";
+        JOIN users ON messages.user_id = users.id
+        WHERE messages.group_id IN (SELECT group_id FROM user_groups WHERE user_id = $user_id) AND users.id != $user_id
+        GROUP BY groups.id
+        ORDER BY messages.id DESC";
         return $this->mysqli($query);
     }
 

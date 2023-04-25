@@ -49,4 +49,14 @@ class AjaxController extends controller
             move_uploaded_file($file['tmp_name'], 'public/image/' . $file_name);
         }
     }
+
+    public function addimj()
+    {
+        if(isset($_POST["id"])){
+echo            $id_chat = $_POST["id"];
+     echo       $imj = $_POST["imj"];
+            $model = $this->model("Usermessages");
+            // $model->addimj($id_chat, $imj, $_SESSION['user']['id']);
+        }
+    }
 }

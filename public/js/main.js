@@ -75,3 +75,19 @@ $(document).ready(function() {
         });
     });
 });
+
+$(document).ready(function () {
+    $(".chat a").click(function () {  
+        let id = $(this).attr("id");
+        let imj = $(this).attr("href");
+        $.post("http://localhost/Chatv2/Ajax/addimj", {
+            id: id,
+            imj: imj
+        }, function (data) { 
+            $("#seen").html(data);
+
+        });
+        // alert(imj + id);
+        // alert(key);
+    });
+});

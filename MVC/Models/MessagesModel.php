@@ -18,7 +18,7 @@
         }
         public function getchat($group_id)
         {
-            $query = "SELECT * FROM messages JOIN users ON messages.user_id = users.id WHERE messages.group_id = $group_id";
+            $query = "SELECT * FROM messages JOIN users ON messages.user_id = users.id WHERE messages.group_id = $group_id ORDER BY messages.id ASC";
             return $this->mysqli($query);
         }
         public function getfriends($id)

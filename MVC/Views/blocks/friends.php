@@ -9,15 +9,19 @@
     <div class="list_friends">
         <?php $var = '';
         foreach ($data["groups"] as $key) { ?>
-            <?php if ($key['user_id'] != $_SESSION['user']['id']) { ?>
-                <?php if ($var != $key['user_id']) { ?>
-                    <a href="http://localhost/chatv2/message?grid=<?= $key['group_id'] ?>">
+            <?php
+            //  if ($key['user_id'] != $_SESSION['user']['id']) { 
+                ?>
+                <?php 
+                    // if ($var != $_SESSION['user']['id']) { 
+                        ?>
+                    <a href="http://localhost/chatv2/message?grid=<?= $key['id'] ?>">
                         <div class="friend">
                             <?php if ($key['avatar'] != '') { ?>
-                                <img class="rounded-circle" src="public/image/<?= $key['avatar'] ?>" alt="">
-                                
+                                <img style="width: 60px; height: 60px" class="rounded-circle" src="public/image/<?= $key['avatar'] ?>" alt="">
+             
                             <?php } else { ?>
-                                <img class="rounded-circle" src="public/image/<?= $key['u_avatar'] ?>" alt="">
+                                <img style="width: 60px; height: 60px" class="rounded-circle" src="public/image/<?= $key['u_avatar'] ?>" alt="">
                                 
                             <?php } ?>
                             <?php if ($key['name'] != '') { ?>
@@ -33,8 +37,8 @@
                             <?php } ?>
                         </div>
                     </a>
-        <?php  }
-            }
+        <?php  
+            
             $var = $key['user_id'];
         } ?>
     </div>
