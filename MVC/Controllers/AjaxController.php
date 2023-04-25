@@ -53,10 +53,15 @@ class AjaxController extends controller
     public function addimj()
     {
         if(isset($_POST["id"])){
-echo            $id_chat = $_POST["id"];
-     echo       $imj = $_POST["imj"];
+            $id_chat = $_POST["id"];
+            $imj = $_POST["imj"];
+            if ($imj == "#tim"){
+                $imj = 1;
+            }if ($imj == "#haha"){
+                $imj = 2;
+            }
             $model = $this->model("Usermessages");
-            // $model->addimj($id_chat, $imj, $_SESSION['user']['id']);
+            $model->addimj($id_chat, $imj, $_SESSION['user']['id']);
         }
     }
 }

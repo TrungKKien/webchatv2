@@ -18,7 +18,17 @@
         }
         public function getchat($group_id)
         {
-            $query = "SELECT * FROM messages JOIN users ON messages.user_id = users.id WHERE messages.group_id = $group_id ORDER BY messages.id ASC";
+            $query = "SELECT messages.*, users.name, users.avatar, user_messages.status AS imj FROM messages 
+            JOIN users ON messages.user_id = users.id 
+            LEFT JOIN user_messages ON messages.id = user_messages.message_id
+            WHERE messages.group_id = $group_id
+            GROUP BY messages.id
+            ORDER BY messages.id ASC";
+            // $query = "SELECT messages.*, users.name, users.avatar, user_messages.status AS imj FROM messages 
+            // JOIN users ON messages.user_id = users.id 
+            // LEFT JOIN user_messages ON messages.id = user_messages.message_id
+            // WHERE messages.group_id = $group_id
+            // ORDER BY messages.id ASC";
             return $this->mysqli($query);
         }
         public function getfriends($id)

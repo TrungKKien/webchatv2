@@ -202,16 +202,25 @@
             /* padding-left: 13px; */
             
         }
-        .chat_user a{
+        /* .chat_user a{
             right: 95%;
             padding: 0 10px;
-        }
-        .dele{
+        } */
+        /* .dele{
             display: none;
             position: absolute;
         }
         .chat:hover .dele {
             display: inline;
+        } */
+        .imj_show{
+            position: absolute;
+            background-color: rgba(255, 255, 255, 1);
+            color: rgb(123, 123, 123);
+            padding: 0px 5px;
+            border-radius: 15px;
+            /* opacity: 0;
+            display: none; */
         }
         .icon {
             position: absolute;

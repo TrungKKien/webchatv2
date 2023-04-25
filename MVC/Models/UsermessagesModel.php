@@ -1,5 +1,6 @@
 <?php
-    class Usermessages extends DataBase {
+    class UsermessagesModel extends DataBase 
+    {
         protected $_table = 'user_messages';
 
         public function __construct()
